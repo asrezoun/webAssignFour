@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bus Ticket</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-            
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap"
@@ -33,7 +34,9 @@
 
         <div class="booking-content">
             <h1>Mega City Bus</h1>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book.</p>
         </div>
 
 
@@ -43,18 +46,18 @@
             <div class="inputs">
                 <div class="input-group">
                     <label" for="">From</label>
-                    <input class="inp-style" type="text" name="" placeholder="Dhaka">
+                        <input class="inp-style" type="text" name="" placeholder="Dhaka">
                 </div>
                 <div class="input-group">
                     <label" for="">From</label>
-                    <input class="inp-style" type="text" name="" placeholder="Chittagone">
+                        <input class="inp-style" type="text" name="" placeholder="Chittagone">
                 </div>
             </div>
 
             <div class="inputs">
                 <div class="input-group">
                     <label" for="">Departure</label>
-                    <input class="inp-style" type="date" name="">
+                        <input class="inp-style" type="date" name="">
                 </div>
                 <div class="input-group">
                     <label for="">Return</label>
@@ -64,24 +67,28 @@
             <!-- first class -->
             <div class="inputs">
                 <div class="input-group f-class">
-                <div>
-                    <label for="">First Class ($150)</label>
-                    <input class="inp-style inp-width" id="firstInput" value="0" placeholder="Ticket quantity" type="number" name="">
+                    <div>
+                        <label for="">First Class ($150)</label>
+                        <input class="inp-style inp-width" id="firstInput" value="0" placeholder="Ticket quantity"
+                            type="number" name="">
+                    </div>
+                    <div class="plus-minus-btn">
+                        <button id="firstPlus" class="btn btn-success"><span style="font-size: 20px;">+</span></button>
+                        <button id="firstMinus" class="btn btn-success"><span
+                                style="font-size: 20px; padding: 0px 3px;">-</span></button>
+                    </div>
                 </div>
-                <div class="plus-minus-btn">
-                        <button id="firstPlus"  class="btn btn-success"><span style="font-size: 20px;">+</span></button>
-                        <button id="firstMinus"  class="btn btn-success"><span style="font-size: 20px; padding: 0px 3px;">-</span></button>
-                </div>
-            </div>
-            <!-- economy class -->
+                <!-- economy class -->
                 <div class="input-group f-class">
                     <div>
                         <label for="">Economy ($100)</label>
-                        <input class="inp-style inp-width" id="ecoInput" value="0" placeholder="Ticket quantity" type="number" name="">
+                        <input class="inp-style inp-width" id="ecoInput" value="0" placeholder="Ticket quantity"
+                            type="number" name="">
                     </div>
                     <div class="plus-minus-btn">
-                        <button id="ecoPlus"  class="btn btn-success"><span style="font-size: 20px;">+</span></button>
-                        <button id="ecoMinus"  class="btn btn-success"><span style="font-size: 20px; padding: 0px 3px;">-</span></button>
+                        <button id="ecoPlus" class="btn btn-success"><span style="font-size: 20px;">+</span></button>
+                        <button id="ecoMinus" class="btn btn-success"><span
+                                style="font-size: 20px; padding: 0px 3px;">-</span></button>
                     </div>
                 </div>
 
@@ -130,37 +137,36 @@
         </div>
     </main>
 
-    <!-- Js starts here -->
+    <!-- Js starts here! -->
     <script>
         //first class
-        const firstPlus= document.getElementById("firstPlus");
-        const firstMinus= document.getElementById("firstMinus");
-        const ecoPlus= document.getElementById("ecoPlus");
-        const ecoMinus= document.getElementById("ecoMinus");
+        const firstPlus = document.getElementById("firstPlus");
+        const firstMinus = document.getElementById("firstMinus");
+        const ecoPlus = document.getElementById("ecoPlus");
+        const ecoMinus = document.getElementById("ecoMinus");
 
         ///first class buttons
-        firstPlus.addEventListener("click", function(){
+        firstPlus.addEventListener("click", function () {
             buttonClickOperation(true, "firstInput");
         })
-        firstMinus.addEventListener("click",function(){
+        firstMinus.addEventListener("click", function () {
             buttonClickOperation(false, "firstInput");
         })
         ///economy class buttons
-        ecoPlus.addEventListener("click", function(){
+        ecoPlus.addEventListener("click", function () {
             buttonClickOperation(true, "ecoInput");
         })
-        ecoMinus.addEventListener("click",function(){
+        ecoMinus.addEventListener("click", function () {
             buttonClickOperation(false, "ecoInput");
         })
 
         ///Button click operation calculation
-        function buttonClickOperation(increasingFlag,id)
-        {
+        function buttonClickOperation(increasingFlag, id) {
             let firstInput = parseFloat(document.getElementById(id).value);
-            
-            if(increasingFlag)
+
+            if (increasingFlag)
                 firstInput++;
-            else if(!increasingFlag && firstInput>0)
+            else if (!increasingFlag && firstInput > 0)
                 firstInput--;
             document.getElementById(id).value = firstInput;
             //console.log(firstInput);
@@ -168,15 +174,14 @@
         }
 
         //calculate total cost
-       function calculateTotalCost()
-       {
+        function calculateTotalCost() {
             const firstClassTicketQuantity = quantityCount("firstInput");
             const ecoClassTicketQuantity = quantityCount("ecoInput");
-            
+
             //calculate cost
-            const subTotal = firstClassTicketQuantity * 150 + ecoClassTicketQuantity*100;
+            const subTotal = firstClassTicketQuantity * 150 + ecoClassTicketQuantity * 100;
             const tax = subTotal * 0.1;
-            const total = subTotal+tax;
+            const total = subTotal + tax;
             //console.log(subTotal);
 
             //show price on screen
@@ -184,39 +189,38 @@
             showPrice("tax", tax);
             showPrice("total", total);
 
-       } 
+        }
 
-       //get ticket quantity
-       function quantityCount(id){
-           const quantity = document.getElementById(id).value;
-           return parseFloat(quantity);
-       }
-       // show price on screen
-       function showPrice(id, amount)
-       {
-           document.getElementById(id).innerText = amount;
-       }
+        //get ticket quantity
+        function quantityCount(id) {
+            const quantity = document.getElementById(id).value;
+            return parseFloat(quantity);
+        }
+        // show price on screen
+        function showPrice(id, amount) {
+            document.getElementById(id).innerText = amount;
+        }
 
-       ///bonus section
-       const submitBtn = document.getElementById("submitBtn");
-       submitBtn.addEventListener("click", function(){
-           const quantity = quantityCount("firstInput")+quantityCount("ecoInput");
-           const cost= document.getElementById("total").innerText;
-           document.getElementById("yourTicket").innerText=quantity;
-           document.getElementById("yourCost").innerText=cost;
+        ///bonus section
+        const submitBtn = document.getElementById("submitBtn");
+        submitBtn.addEventListener("click", function () {
+            const quantity = quantityCount("firstInput") + quantityCount("ecoInput");
+            const cost = document.getElementById("total").innerText;
+            document.getElementById("yourTicket").innerText = quantity;
+            document.getElementById("yourCost").innerText = cost;
 
-            document.getElementById("bookingForm").style.display= "none";
+            document.getElementById("bookingForm").style.display = "none";
             document.getElementById("purchaseHistory").style.display = "block";
 
 
-       })
+        })
 
-       //close the history
-       const close = document.getElementById("close");
-       close.addEventListener("click", function(){
-        document.getElementById("bookingForm").style.display= "block";
+        //close the history
+        const close = document.getElementById("close");
+        close.addEventListener("click", function () {
+            document.getElementById("bookingForm").style.display = "block";
             document.getElementById("purchaseHistory").style.display = "none";
-       })
+        })
     </script>
     <!--Thank You-->
 </body>
